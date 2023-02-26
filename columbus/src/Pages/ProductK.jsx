@@ -14,13 +14,13 @@ import {
   // import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
   import axios from "axios";
-
+  import { useAuth0 } from "@auth0/auth0-react";
 
 
 
 const ProductK=()=>{
     const [data,setData]=React.useState([]);
-
+    const {isAuthenticated } = useAuth0();
     React.useEffect(()=>{
         axios.get('http://localhost:3000/kid')
   .then(function (response) {
@@ -50,7 +50,7 @@ const ProductK=()=>{
     return (
         <div style={{width:'40%'}}>
             
-        <Grid width='100%' autoFlow='row' templateColumns="repeat(3,1fr)" gap={3} whiteSpace='wrap'>
+        <Grid width='100%' autoFlow='row' templateColumns={{base:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(3,1fr)"}} gap={3} whiteSpace='wrap'>
         {data.map((el)=>(
                 <Flex p={50}  key={el.id}  alignItems="center" justifyContent="center">
                 <Box
@@ -104,7 +104,7 @@ const ProductK=()=>{
                         placement={'top'}
                         color={'gray.800'}
                         fontSize={'1.2em'}>
-                       <chakra.a display={'flex'} onClick={(e)=>AddItem(el.id,el.image,el.name,el.rating,el.price,e)}>
+                       <chakra.a display={'flex'} onClick={(e)=>(isAuthenticated)?AddItem(el.id,el.image,el.name,el.rating,el.price,e):alert("Please Log In first!!")}>
                           <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}  />
                         </chakra.a>
                       </Tooltip>

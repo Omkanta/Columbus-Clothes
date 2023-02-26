@@ -4,6 +4,7 @@ import {
     Text,
     IconButton,
     Button,
+    Image,
     Stack,
     Collapse,
     Icon,
@@ -13,6 +14,7 @@ import {
     PopoverContent,
     useColorModeValue,
     useBreakpointValue,
+    Input,InputGroup,InputLeftElement,
     useDisclosure,
   } from '@chakra-ui/react';
   import {
@@ -21,10 +23,23 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  
+  import { useAuth0 } from "@auth0/auth0-react";
+  import {AiOutlineSearch,AiOutlineShoppingCart} from "react-icons/ai";
+  import {useNavigate} from "react-router-dom"
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-  
+    const { loginWithRedirect,logout,isAuthenticated } = useAuth0();
+
+    let navigate=useNavigate();
+    const HomeLogo=()=>{
+      let path='/';
+      navigate(path);
+      }
+      const Cartnav=()=>{
+        let path='/cart';
+        navigate(path);
+        }
+          
     return (
       <Box>
         <Flex
@@ -51,43 +66,68 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
-              Logo
-            </Text>
+          <Image h={"35px"} borderRadius={"50%"} src={'https://www.linkpicture.com/q/Coloumus_logo.png'} onClick={HomeLogo} />
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
-  
+          <InputGroup w={500} mr={'140px'}>
+              <InputLeftElement
+                pointerEvents='none'
+                children={<AiOutlineSearch color='gray.300' />}
+              />
+              <Input type='tel' placeholder='Search for a product, Brand or Category' />
+          </InputGroup>
+          <Box mx={10}><AiOutlineShoppingCart onClick={Cartnav} size="25px"/></Box>
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
+              {isAuthenticated?           <Button
+              as={'a'}
+              fontSize={'sm'}
+              fontWeight={400}
+              bg={"red.400"}
+              color={"white"}
+              _hover={{ bg:"red.600",
+              color:"white"}}
+              onClick={() => logout()}>
+              Log Out
+            </Button>:
+                       <Button
+                       as={'a'}
+                       bg={"blue.400"}
+                       color={"white"}
+                       _hover={{ bg:"blue.600",
+                       color:"white"}}
+                       fontSize={'sm'}
+                       fontWeight={400}
+                       onClick={() => loginWithRedirect()}>
+                       Sign In/ Sign Up
+                     </Button>}
+            {/* <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
+              onClick={() => loginWithRedirect()}
               href={'#'}>
-              Sign In
-            </Button>
+              Sign In/ Sign Up
+            </Button> */}
             <Button
               as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'blackAlpha.700'}
               href={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'blackAlpha.900',
               }}>
-              Sign Up
+              Admin
             </Button>
           </Stack>
         </Flex>
@@ -253,15 +293,15 @@ import {
   const NAV_ITEMS: Array<NavItem> = [
 
     {
-      label: 'Learn Design',
-      href: 'productF',
-    },
-    {
-      label: 'Hire Designers',
+      label: 'MEN',
       href: 'productM',
     },
+    {
+      label: 'WOMEN',
+      href: 'productF',
+    },
         {
-      label: "Kid's Page",
+      label: "KIDS",
       href: 'productK',
     },
   ];

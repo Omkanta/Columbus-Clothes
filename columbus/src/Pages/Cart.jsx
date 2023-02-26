@@ -16,10 +16,12 @@ import {
 const Cart=()=>{
     const [data,setData]=React.useState([]);
     // let navigate=useNavigate();
+
     React.useEffect(()=>{
         axios.get('http://localhost:3000/cart')
   .then(function (response) {
     // handle success
+    console.log(response.data)
     setData(response.data);
   })
   .catch(function (error) {
@@ -29,11 +31,12 @@ const Cart=()=>{
   .then(function () {
     // always executed
   });
-    },[])
+    },[data])
     function handleDelete(id,e){
         axios.delete(`http://localhost:3000/cart/${id}`)
                 .then(function (response) {
                   console.log(response);
+
                 })
                 .catch(function (error) {
                   console.log(error);
@@ -42,6 +45,7 @@ const Cart=()=>{
     return (
         <div style={{width:'40%'}}>
             <Text fontSize={'xx-large'} margin={'auto'}>Cart</Text>
+            <Button>Check Out</Button>
         <Grid width='100%' autoFlow='row' templateColumns="repeat(3,1fr)" gap={3} whiteSpace='wrap'>
         {data.map((el)=>(
                 <Flex p={50}   alignItems="center" justifyContent="center">

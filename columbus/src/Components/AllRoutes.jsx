@@ -15,6 +15,7 @@ const AllRoutes=()=>{
             <Route path="/productF" element={<ProductF/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path='/admin' element={<Admin/>}/>
+            <Route path='*' element={<h1>Page not Found</h1>}/>
         </Routes>
     )
 }

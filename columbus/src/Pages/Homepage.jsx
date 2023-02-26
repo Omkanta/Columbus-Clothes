@@ -1,63 +1,62 @@
-import {Box,Text,Image,Stack, HStack, VStack,Center, Button} from "@chakra-ui/react";
+import {Box,Text,Image,Stack, HStack, VStack,Center, Button, Grid} from "@chakra-ui/react";
 import {Link} from "react-router-dom"
 function Home(){
 return (
 <Center w={"100"}>
 <VStack w={"100%"}>
-<Box h={500} w={"100%"} backgroundImage={"https://columbia.scene7.com/is/image/ColumbiaSportswear2/37317_C_U_Q1_WinterSale5_HP_Hero_XL?$aem_pjpeg$"}>
-           <Text color={"white"} fontSize={55}>Hello</Text>
-</Box>
+<Image h={500} w={"100%"} backgroundImage={"https://www.linkpicture.com/q/Homepage_3.png"}/>
 
         <Text fontSize={30} paddingTop={"60px"} paddingBottom={10} fontWeight={"bold"}>Seasonal Essentials</Text>
-        <HStack gap={10}>
+        <Grid templateColumns={{base:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(4,1fr)"}} gap={5}>
                 <Box>
                         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/11-03_37132_C_U_OOP_q4_NewtonRidge_HP_W_PDP?$aem_pjpeg$"/>
-                        <Text>Women's</Text>
+                        <Text fontWeight={"bold"}>Women's</Text>
                 </Box>
                 <Box>
                         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/11-03_37132_C_U_OOP_q4_NewtonRidge_HP_Promo_Mens_PDP?$aem_pjpeg$"/>
-                        <Text>Men's</Text>
+                        <Text fontWeight={'bold'}>Men's</Text>
                 </Box>
                 <Box>
                         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/11-03_37132_C_U_OOP_q4_NewtonRidge_HP_Promo_Youth_PDP?$aem_pjpeg$"/>
-                        <Text>Kid's</Text>
+                        <Text fontWeight={'bold'}>Kid's</Text>
                 </Box>
                 <Box>
                         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/11-03_37132_C_U_OOP_q4_NewtonRidge_HP_FW_PDP?$aem_pjpeg$"/>
-                        <Text>FootWear</Text>
+                        <Text fontWeight={'bold'}>FootWear</Text>
                 </Box>
-        </HStack>
-        <Box pt={60}>
-        <Image src='https://columbia.scene7.com/is/image/ColumbiaSportswear2/20590_C_U_X1_SU20_CGR_HP_Banner_Black_Logo_resized_@2x?$aem_png$'/>
+        </Grid>
+        <Center pt={65} pb={35} display={'grid'} flexDirection={'column'} m={'auto'}>
+        <Image pl={100} src='https://columbia.scene7.com/is/image/ColumbiaSportswear2/20590_C_U_X1_SU20_CGR_HP_Banner_Black_Logo_resized_@2x?$aem_png$'/>
         <Text fontSize={"40px"} fontWeight={'bold'}>Get Rewards On Every Purchase</Text>
-        <Text>Members get free shipping and rewards on every order.</Text>
+        <Text m={4}>Members get free shipping and rewards on every order.</Text>
         <HStack display={"flex"} justifyContent={'center'} gap={10}>
-                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>LOG IN & SHOP</Button>
-                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>JOIN FOR FREE</Button>
+                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={5} pb={5} pl={25} pr={25}>LOG IN & SHOP</Button>
+                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={5} pb={5} pl={25} pr={25}>JOIN FOR FREE</Button>
         </HStack>
-        </Box>
+        </Center>
         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/02-09_37315_Campaign_Mountain_v0_XL?$aem_pjpeg$"/>
-        <Box pt={40}>
+        <Box pt={'40px'}>
         <Text fontSize={"40px"} fontWeight={'bold'}>The Mountain Is Calling</Text>
         <Text>Answer it in warm, waterproof, breathable gear.</Text>
-        <HStack display={"flex"} justifyContent={'center'} gap={10}>
-                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} p={8} pl={15} pr={15}>SHOP SKI & SNOW</Button>
-        </HStack>
+                <Button m={4} _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} p={8} pl={15} pr={15}>SHOP SKI & SNOW</Button>
+
         </Box>
         <Box>
-        <Text fontSize={30} paddingTop={"60px"} paddingBottom={10} fontWeight={"bold"}>Featured Favorites</Text>
+        <Text fontSize={30} paddingTop={"60px"} paddingBottom={20} fontWeight={"bold"}>Featured Favorites</Text>
         </Box>
-        <HStack w={'100%'} h={"450px"} display={"flex"} justifyContent={"center"}>
-                <Box w={"45%"} h={"100%"} bgImage={'https://columbia.scene7.com/is/image/ColumbiaSportswear2/1-26_37313_COL_US_Mountain_HP_Refresh-SH-02_LG?$aem_pjpeg$'}>
-                    <Text color={"white"}>STAY DRY</Text>
+        <Grid w={'100%'} h={"450px"} gap={5} display={"flex"} justifyContent={"center"} pb={"200px"}>
+                <Box w={"45%"} h={"100%"}>
+                        <Image src={'https://columbia.scene7.com/is/image/ColumbiaSportswear2/1-26_37313_COL_US_Mountain_HP_Refresh-SH-02_LG?$aem_pjpeg$'}/>
+                    <Text fontWeight={'bold'}>STAY DRY</Text>
                      
                 </Box>
-                <Box w={"45%"} h={"100%"} bgImage={'https://columbia.scene7.com/is/image/ColumbiaSportswear2/1-26_37313_COL_US_Mountain_HP_Refresh-SH-02_LG?$aem_pjpeg$'}>
-                    <Text>STAY DRY</Text>
+                <Box w={"45%"} h={"100%"} >
+                        <Image src={'https://columbia.scene7.com/is/image/ColumbiaSportswear2/02-09_37315_Youth_NA_v1_XL?$aem_pjpeg$'}/>
+                    <Text fontWeight={'bold'}>STAY DRY</Text>
                      
                 </Box>
-        </HStack>
-        <Text fontSize={30} paddingTop={"60px"} paddingBottom={10} fontWeight={"bold"}>How Do You Play?</Text>
+        </Grid>
+        <Text fontSize={30} paddingTop={"90px"} paddingBottom={10} fontWeight={"bold"}>How Do You Play?</Text>
         <HStack>
                 <Box>
                 <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/12-26_COL_US_WIN21_WINTERSALE_CONTINGENCY_SUPERCAT_viznav02_04_v2?$aem_pjpeg$"/>
