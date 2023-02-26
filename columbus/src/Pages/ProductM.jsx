@@ -14,13 +14,13 @@ import {
   // import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
   import axios from "axios";
-
+  import { useAuth0 } from "@auth0/auth0-react";
 
 
 
 const ProductM=()=>{
     const [data,setData]=React.useState([]);
-
+    const {isAuthenticated } = useAuth0();
     React.useEffect(()=>{
         axios.get('http://localhost:3000/men')
   .then(function (response) {
@@ -104,7 +104,7 @@ const ProductM=()=>{
                         placement={'top'}
                         color={'gray.800'}
                         fontSize={'1.2em'}>
-                       <chakra.a display={'flex'} onClick={(e)=>AddItem(el.id,el.image,el.name,el.rating,el.price,e)}>
+                       <chakra.a display={'flex'} onClick={(e)=>(isAuthenticated)?AddItem(el.id,el.image,el.name,el.rating,el.price,e):alert("Please Log In first!!")}>
                           <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}  />
                         </chakra.a>
                       </Tooltip>

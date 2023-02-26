@@ -1373,5 +1373,13 @@
       "rating": "4.632 out of 5 (19 Customer Reviews)"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 3,
+      "image": "https://columbia.scene7.com/is/image/ColumbiaSportswear2/1582881_329_f?$x1_grid$&v=1676388993",
+      "name": "Boy's Rain-Zilla Jacket",
+      "price": "$23.92",
+      "rating": "4.55 out of 5 (299 Customer Reviews)"
+    }
+  ]
 }
