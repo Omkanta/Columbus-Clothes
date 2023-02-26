@@ -32,8 +32,8 @@ return (
         <Text fontSize={"40px"} fontWeight={'bold'}>Get Rewards On Every Purchase</Text>
         <Text>Members get free shipping and rewards on every order.</Text>
         <HStack display={"flex"} justifyContent={'center'} gap={10}>
-                <Button bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>LOG IN & SHOP</Button>
-                <Button bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>JOIN FOR FREE</Button>
+                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>LOG IN & SHOP</Button>
+                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} pt={8} pb={8} pl={25} pr={25}>JOIN FOR FREE</Button>
         </HStack>
         </Box>
         <Image src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/02-09_37315_Campaign_Mountain_v0_XL?$aem_pjpeg$"/>
@@ -41,7 +41,7 @@ return (
         <Text fontSize={"40px"} fontWeight={'bold'}>The Mountain Is Calling</Text>
         <Text>Answer it in warm, waterproof, breathable gear.</Text>
         <HStack display={"flex"} justifyContent={'center'} gap={10}>
-                <Button bgColor={'black'} color={'white'} p={8} pl={15} pr={15}>SHOP SKI & SNOW</Button>
+                <Button _hover={{color:"black",bgColor:"white"}} bgColor={'black'} color={'white'} p={8} pl={15} pr={15}>SHOP SKI & SNOW</Button>
         </HStack>
         </Box>
         <Box>
