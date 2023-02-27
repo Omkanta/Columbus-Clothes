@@ -1,8 +1,8 @@
 # abandoned-transport-7963
 
 Project Name: Columbus Clothes
--Individual Project.
--5 days time span to complete.
+Individual Project.
+5 days time span to complete.
 
 #Description:
 Columbus Clothes is E-commerce website which offers variety of clothes for three different categories i.e Men's, Women's, Kid's Section. The purpose for creation of the website was to have easier access to the clothes market without having to deal with hours of browsing and with penelty of discounts  all from the comfort of our home.
@@ -17,12 +17,12 @@ Columbus Clothes is E-commerce website which offers variety of clothes for three
 2. The json server must run on port 3000.
 3. When starting the application make sure to run the app on port 3001.
 
-#Components and Pages
--Components
+#Components
   - AllRoutes
   - Navbar
   - Footer
- -Pages
+
+#Pages
   - HomePage
   - Mens Product Page
   - Womens product Page
