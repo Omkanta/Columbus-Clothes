@@ -22,7 +22,7 @@ const ProductF=()=>{
     const [data,setData]=React.useState([]);
     const {isAuthenticated } = useAuth0();
     React.useEffect(()=>{
-        axios.get('http://localhost:3000/women')
+        axios.get('https://columbus-server.onrender.com/women')
   .then(function (response) {
     // handle success
     setData(response.data);
@@ -37,7 +37,7 @@ const ProductF=()=>{
     },[])
 
     function AddItem(id,image,name,rating,price,e){
-      axios.post("http://localhost:3000/cart", {
+      axios.post("https://columbus-server.onrender.com/cart", {
         id,image,name,price,rating
       })
       .then(function (response) {
@@ -104,7 +104,7 @@ const ProductF=()=>{
                         placement={'top'}
                         color={'gray.800'}
                         fontSize={'1.2em'}>
-                       <chakra.a display={'flex'} onClick={(e)=>(isAuthenticated)?AddItem(el.id,el.image,el.name,el.rating,el.price,e):alert("Please Log In first!!")}>
+                       <chakra.a display={'flex'} onClick={(e)=>AddItem(el.id,el.image,el.name,el.rating,el.price,e)}>
                           <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}  />
                         </chakra.a>
                       </Tooltip>

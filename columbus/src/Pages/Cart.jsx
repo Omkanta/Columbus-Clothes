@@ -18,7 +18,7 @@ const Cart=()=>{
     // let navigate=useNavigate();
 
     React.useEffect(()=>{
-        axios.get('http://localhost:3000/cart')
+        axios.get('https://columbus-server.onrender.com/cart')
   .then(function (response) {
     // handle success
     console.log(response.data)
@@ -33,7 +33,7 @@ const Cart=()=>{
   });
     },[data])
     function handleDelete(id,e){
-        axios.delete(`http://localhost:3000/cart/${id}`)
+        axios.delete(`https://columbus-server.onrender.com/cart/${id}`)
                 .then(function (response) {
                   console.log(response);
 
@@ -46,7 +46,7 @@ const Cart=()=>{
         <div style={{width:'40%'}}>
             <Text fontSize={'xx-large'} margin={'auto'}>Cart</Text>
             <Button>Check Out</Button>
-        <Grid width='100%' autoFlow='row' templateColumns="repeat(3,1fr)" gap={3} whiteSpace='wrap'>
+        <Grid width='100%' autoFlow='row' templateColumns={{base:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(3,1fr)"}} gap={3} whiteSpace='wrap'>
         {data.map((el)=>(
                 <Flex p={50}   alignItems="center" justifyContent="center">
                 <Box
