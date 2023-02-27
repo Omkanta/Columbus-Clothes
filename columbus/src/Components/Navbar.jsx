@@ -39,7 +39,7 @@ import {
         let path='/cart';
         navigate(path);
         }
-          
+
     return (
       <Box>
         <Flex
@@ -85,7 +85,7 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-              {isAuthenticated?           <Button
+              {isAuthenticated? <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
