@@ -116,7 +116,7 @@ import {
               href={'#'}>
               Sign In/ Sign Up
             </Button> */}
-            <Button
+            {/* <Button
               as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -128,7 +128,7 @@ import {
                 bg: 'blackAlpha.900',
               }}>
               Admin
-            </Button>
+            </Button> */}
           </Stack>
         </Flex>
   
