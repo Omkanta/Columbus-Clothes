@@ -30,7 +30,7 @@ Columbus Clothes is E-commerce website which offers variety of clothes for three
   - Product Page
     ![ProductPage](https://github.com/Omkanta/abandoned-transport-7963/assets/112754465/6fde2e18-2528-4bec-b63c-cb43efb1afed)
 
-  - Cart 
+  - Cart Page
   ![Cart](https://github.com/Omkanta/abandoned-transport-7963/assets/112754465/4602eb24-55e6-4b4c-9b80-23074188872f)
 
   
